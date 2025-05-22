@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metamorph Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-white antialiased">
+
+    <div class="relative min-h-screen overflow-hidden flex flex-col">
+        <!-- Abstract Background Blobs -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div class="absolute -top-1/4 -left-1/4 w-[120vw] h-[120vh] md:w-[80vw] md:h-[150vh] opacity-40 md:opacity-30 transform">
+                <div class="w-full h-full bg-gradient-to-br from-purple-600 via-pink-500 to-purple-700 rounded-[50%_50%_30%_70%_/_40%_60%_40%_60%] animate-pulse-slow blur-3xl"></div>
+            </div>
+            <div class="absolute -bottom-1/4 -right-1/4 w-[100vw] h-[100vh] md:w-[70vw] md:h-[120vh] opacity-30 md:opacity-20 transform">
+                 <div class="w-full h-full bg-gradient-to-tl from-blue-500 via-purple-500 to-indigo-600 rounded-[70%_30%_50%_50%_/_60%_40%_60%_40%] animate-pulse-slower blur-3xl"></div>
+            </div>
+        </div>
+        
+        <script>
+            tailwind.config = {
+                theme: { extend: {
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'pulse-slower': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }}
+            }
+        </script>
+
+    <header class="absolute top-0 left-0 right-0 z-40 p-4 sm:p-6 md:p-8"> 
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight animate-fadeInLeft">
+                 <img src="images/logo.png" alt="Metamorph Solutions Small Logo" class="h-20">
+            </a>
+            <button id="openNavButton" class="p-2 text-white hover:text-pink-300 transition-colors animate-fadeInRight">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 sm:w-8 sm:h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="overlayNav" class="fixed inset-0 overlay-nav-bg w-full h-full flex flex-col items-start justify-start p-6 sm:p-8 md:p-12 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="w-full flex justify-between items-center mb-12 sm:mb-16 md:mb-20">
+           <img src="images/logo.png" alt="Metamorph Solutions Logo" class="h-10 sm:h-12">
+            <button id="closeNavButton" class="p-2 text-white hover:text-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7 sm:w-8 sm:h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav>
+            <ul class="space-y-3 sm:space-y-4">
+                <li><a href="#" class="overlay-nav-link active">Home</a></li>
+                <li><a href="#services-section" class="overlay-nav-link">Services</a></li>
+                <li><a href="#projects-section" class="overlay-nav-link">Portfolio</a></li>
+                <li><a href="#process" class="overlay-nav-link">Process</a></li>
+                <li><a href="#testimonials-section" class="overlay-nav-link">Testimonials</a></li>
+                <li><a href="#faq" class="overlay-nav-link">FAQs</a></li>
+                <li><a href="#cta" class="overlay-nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+        <main class="relative z-10 flex-grow flex flex-col items-center justify-center pt-24 pb-40 sm:pt-28 sm:pb-48 px-4 text-center">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%+3rem)] sm:-translate-y-[calc(50%+4rem)] md:-translate-y-[calc(50%+5rem)] 
+                        w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56
+                        border-2 border-yellow-400 rounded-full z-10 opacity-60 animate-scaleUp" style="animation-name: haloPulse; animation-duration: 3s; animation-iteration-count: infinite;">
+            </div>
+             <img src="images/Group.png" alt="Classical Statue" 
+            
+                 class="absolute bottom-0 left-1/2 -translate-x-1/2 
+                        w-[60%] max-w-[280px] 
+                        sm:w-[55%] sm:max-w-[350px] 
+                        md:w-auto md:h-[65vh] md:max-h-[500px] md:max-w-none
+                        lg:h-[70vh] lg:max-h-[600px]
+                        z-20 object-contain pointer-events-none select-none">
+            <div class="relative z-30">
+                <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[140px] xl:text-[160px] font-bold tracking-tighter text-white leading-none text-shadow-md animate-fadeInUp">
+                    Metamorph
+                </h1>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-200 
+                           mt-0 md:mt-1 
+                           ml-[10%] sm:ml-[15%] md:ml-[20%] lg:ml-[25%] xl:ml-[30%]
+                           text-shadow-sm animate-fadeInUp delay-200">
+                    Solutions
+                </h2>
+            </div>
+            <img src="images/hero.png" alt="Classical Statue" 
+            
+                 class="absolute bottom-0 left-1/2 -translate-x-1/2 
+                        w-[60%] max-w-[280px] 
+                        sm:w-[55%] sm:max-w-[350px] 
+                        md:w-auto md:h-[65vh] md:max-h-[500px] md:max-w-none
+                        lg:h-[70vh] lg:max-h-[600px]
+                        z-20 object-contain pointer-events-none select-none">
+        </main>
+
+        <footer class="relative z-30 w-full p-4 sm:p-6 md:p-8 mt-auto">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+                <p class="text-xs sm:text-sm text-gray-300 md:w-2/5 lg:w-[45%] xl:w-1/3 text-center md:text-left leading-relaxed animate-fadeInLeft delay-200">
+                    We're passionate about turning your vision into stunning designs. Whether you're an individual, startup, or corporation, we bring creativity and precision to elevate your brand.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 animate-fadeInRight delay-200">
+                    <a href="#cta" class="cta-button-gradient text-white font-semibold py-3 px-8 rounded-lg shadow-lg
+                               hover:shadow-xl hover:brightness-110 transform hover:scale-105 transition-all duration-300 text-sm md:text-base w-full sm:w-auto text-center">
+                        Contact
+                    </a>
+                    <a href="#cta" class="cta-button-gradient text-white font-semibold py-3 px-8 rounded-lg shadow-lg
+                               hover:shadow-xl hover:brightness-110 transform hover:scale-105 transition-all duration-300 text-sm md:text-base w-full sm:w-auto text-center">
+                        Have a project!
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="services-section" class="relative overflow-hidden min-h-screen flex flex-col">
+        <header class="py-6 md:py-8 relative z-20"> 
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap justify-center sm:justify-around items-center gap-x-6 gap-y-4 sm:gap-x-8 md:gap-x-12">
+                    <div class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors animate-fadeInUp delay-100">
+                        <img src="images/logo.svg.png" alt="Ecwid logo" class="h-6 sm:h-8 opacity-70 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors animate-fadeInUp delay-200">
+                        <img src="images/shopify.png" alt="Volusion logo" class="h-6 sm:h-8 opacity-70 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors animate-fadeInUp delay-300">
+                        <img src="images/woo.png" alt="Shopify logo" class="h-6 sm:h-8 opacity-70 hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors animate-fadeInUp delay-400">
+                        <img src="images/vol.png" alt="WooCommerce logo" class="h-6 sm:h-8 opacity-70 hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container mx-auto py-12 md:py-16 lg:py-24 px-4 text-center flex-grow flex flex-col justify-center relative z-10">
+            <div class="animate-fadeInUp">
+                <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 tracking-wide">We Provide<span class="text-pink-500 text-3xl md:text-4xl relative -top-1">.</span></p>
+                <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight text-white mt-1 md:mt-2 text-shadow-lg">Services</h1>
+            </div>
+
+            <div class="mt-12 md:mt-16 lg:mt-20">
+                <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-8 md:gap-x-4 lg:gap-x-2 xl:gap-x-0">
+                    <div class="glass-card rounded-2xl p-4 w-[160px] h-[150px] sm:w-[180px] sm:h-[170px] md:w-[200px] md:h-[190px]
+                                flex flex-col justify-center items-center transform -rotate-[6deg] transition-all duration-300 mx-1 md:mx-0 animate-scaleUp delay-100">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center mb-3">
+                            <img src="images/png1.png" alt="Branding and Logo Design Icon" class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-xs md:text-sm font-medium text-gray-200">Branding & Logo</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 w-[160px] h-[150px] sm:w-[180px] sm:h-[170px] md:w-[200px] md:h-[190px]
+                                flex flex-col justify-center items-center transform -rotate-[3deg] transition-all duration-300 mx-1 md:mx-0 md:-ml-4 lg:-ml-6 z-[5] animate-scaleUp delay-200">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center mb-3">
+                            <img src="images/png2.png" alt="Motion Design Icon" class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-xs md:text-sm font-medium text-gray-200">Motion Design</p>
+                    </div>
+                    <div class="ui-ux-card-gradient rounded-2xl p-4 w-[170px] h-[160px] sm:w-[190px] sm:h-[180px] md:w-[210px] md:h-[200px]
+                                flex flex-col justify-center items-center transform rotate-[2deg] scale-105 transition-all duration-300 mx-1 md:mx-0 md:-ml-4 lg:-ml-6 z-10 shadow-2xl animate-scaleUp delay-300">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-lg bg-white/20 flex items-center justify-center mb-3">
+                           <img src="images/png3.png" alt="UI/UX Design Icon" class="w-10 h-10 object-contain">
+                        </div>
+                        <p class="text-xs md:text-sm font-medium text-white">UI/UX Design</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 w-[160px] h-[150px] sm:w-[180px] sm:h-[170px] md:w-[200px] md:h-[190px]
+                                flex flex-col justify-center items-center transform -rotate-[3deg] transition-all duration-300 mx-1 md:mx-0 md:-ml-4 lg:-ml-6 z-[5] animate-scaleUp delay-400">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center mb-3">
+                            <img src="images/png4.png" alt="Digital Marketing Icon" class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-xs md:text-sm font-medium text-gray-200">Digital Marketing</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-4 w-[160px] h-[150px] sm:w-[180px] sm:h-[170px] md:w-[200px] md:h-[190px]
+                                flex flex-col justify-center items-center transform rotate-[5deg] transition-all duration-300 mx-1 md:mx-0 md:-ml-4 lg:-ml-6 animate-scaleUp delay-500">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center mb-3">
+                           <img src="images/png5.png" alt="2D/3D Animation Icon" class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-xs md:text-sm font-medium text-gray-200">2D, 3D Animation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 md:mt-20 lg:mt-24 animate-fadeInUp delay-500">
+                <a href="#cta" class="cta-button-gradient text-white font-semibold py-3 px-8 rounded-lg shadow-lg
+                               hover:shadow-xl hover:brightness-110 transform hover:scale-105 transition-all duration-300 text-sm md:text-base w-full sm:w-auto text-center">
+                        Have a project!
+                    </a>
+            </div>
+        </main>
+
+        <img src="images/asset.png" alt="Decorative abstract pink and purple swirl"
+             class="absolute bottom-0 right-0
+                    w-3/4 max-w-xs sm:w-1/2 sm:max-w-sm md:w-2/5 md:max-w-md lg:w-1/3 lg:max-w-lg
+                    opacity-60 md:opacity-75 pointer-events-none z-0 
+                    transform translate-x-[15%] translate-y-[15%] sm:translate-x-[10%] sm:translate-y-[10%] md:translate-x-[5%] md:translate-y-[5%]" />
+    </div>
+
+
+     <section id="projects-section" class="relative min-h-screen flex flex-col justify-center items-center py-16 md:py-24 px-4 overflow-hidden">
+        <img src="images/m-back.png" alt="Abstract background wave accent"
+             class="absolute bottom-0 left-1/2 -translate-x-1/2
+                    w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl h-auto object-contain
+                    opacity-80 md:opacity-100 z-10 pointer-events-none select-none
+                    translate-y-[20%] sm:translate-y-[15%] md:translate-y-[10%]" />
+      
+        <div class="relative text-center mb-8 md:mb-12 lg:mb-0 lg:absolute lg:top-[10%] xl:top-[12%] 2xl:top-[15%] lg:left-1/2 lg:-translate-x-1/2 z-30 animate-fadeInUp">
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-medium text-gray-300 tracking-wide">
+                Featured<span class="text-purple-400 text-3xl sm:text-4xl md:text-5xl relative -top-0.5 mx-1">.</span>
+            </h2>
+            <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[100px] xl:text-[120px] font-bold text-white tracking-tight leading-none mt-0 md:-mt-1 text-shadow-lg">
+                Projects
+            </h1>
+        </div>
+
+        <div class="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mt-8 md:mt-12 lg:mt-32 xl:mt-48 z-20">
+            <div class="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[650px]">
+               <img src="images/mobile left.png" alt="Mobile app screen for SmartPure My Device"
+                     class="absolute left-[5%] sm:left-[10%] md:left-[12%] top-1/4 transform rotate-[2deg] phone-float-left 
+                            w-[55%] sm:w-[50%] md:w-[45%] lg:w-[280px] xl:w-[320px] 2xl:w-[360px]
+                            h-auto object-contain z-20 select-none shadow-2xl rounded-3xl animate-fadeInLeft delay-200" />
+               
+                <img src="images/mobile right.png" alt="Mobile app screen for Select Lighting Zone"
+                     class="absolute right-[5%] sm:right-[10%] md:right-[12%] top-1/4 transform -rotate-[2deg] phone-float-right
+                            w-[55%] sm:w-[50%] md:w-[45%] lg:w-[280px] xl:w-[320px] 2xl:w-[360px]
+                            h-auto object-contain z-20 select-none shadow-2xl rounded-3xl animate-fadeInRight delay-200" />
+            </div>
+        </div>
+
+        <div class="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl
+                    flex flex-col sm:flex-row justify-between items-center
+                    mt-[-40px] sm:mt-[-60px] md:mt-[-80px] lg:mt-[-50px] xl:mt-[-30px] 2xl:mt-0 z-40
+                    gap-6 sm:gap-0 px-4">
+            <div class="text-center sm:text-left animate-fadeInLeft delay-300">
+                <h3 class="text-xl md:text-2xl lg:text-3xl font-semibold text-white">Deep Seek</h3>
+                <p class="text-lg md:text-xl lg:text-2xl font-normal text-gray-200 -mt-1">Landing page</p>
+                <button class="mt-3 md:mt-4 py-2.5 px-6 md:py-3 md:px-8
+                               bg-gradient-to-r from-purple-600 via-pink-500 to-pink-600
+                               hover:from-purple-700 hover:via-pink-600 hover:to-pink-700 hover:shadow-xl
+                               text-white text-xs sm:text-sm md:text-base font-semibold rounded-lg
+                               transition-all duration-300 shadow-lg transform hover:scale-105">
+                    Case study
+                </button>
+            </div>
+            <div class="flex space-x-3 md:space-x-4 animate-fadeInRight delay-300">
+                <button class="p-3 md:p-4 rounded-lg shadow-lg
+                               bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500
+                               hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 hover:shadow-xl
+                               text-white transform hover:scale-110 transition-all duration-300" aria-label="Previous Project">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button class="p-3 md:p-4 rounded-lg shadow-lg
+                               bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500
+                               hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 hover:shadow-xl
+                               text-white transform hover:scale-110 transition-all duration-300" aria-label="Next Project">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    
+<section id="process" class="relative py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-purple-700 rounded-full blur-[150px]"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-12 md:mb-20 animate-fadeInUp">
+                <p class="text-xl md:text-2xl lg:text-3xl text-gray-400 font-light">Our</p>
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white text-shadow-lg -mt-1 md:-mt-2 animate-fadeInUp delay-100">Process</h2>
+                <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 font-light mt-1 md:mt-2 animate-fadeInUp delay-200">is Everything</p>
+            </div>
+
+            <!-- Outer container to hide overflow and act as viewport -->
+            <div class="w-full overflow-hidden group"> <!-- Added group for hover pause -->
+                <!-- Inner container that will scroll, duplicated content for seamlessness -->
+                <div class="flex animate-slow-scroll-left group-hover:pause-animation">
+                    <!-- Original Set of Cards -->
+                    <div class="process-card flex-none w-[280px] sm:w-[300px] md:w-[340px] p-6 rounded-xl text-center md:text-left flex flex-col items-center md:items-start animate-scaleUp delay-300 mx-3 sm:mx-4">
+                        <img src="images/image.png" alt="Initiate Icon" class="custom-icon">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Initiate the Morph</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Start by connecting with us. Share your vision through our contact form or book a call. We're ready to explore your goals and ignite the transformation.
+                        </p>
+                    </div>
+                    <div class="process-card flex-none w-[280px] sm:w-[300px] md:w-[340px] p-6 rounded-xl text-center md:text-left flex flex-col items-center md:items-start animate-scaleUp delay-400 mx-3 sm:mx-4">
+                        <img src="images/image2.png" alt="Visualize Icon" class="custom-icon">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Visualize & Design</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Bring us your boldest ideas. We craft futuristic visuals that align perfectly with your brand's device and forward-thinking identity.
+                        </p>
+                    </div>
+                    <div class="process-card flex-none w-[280px] sm:w-[300px] md:w-[340px] p-6 rounded-xl text-center md:text-left flex flex-col items-center md:items-start animate-scaleUp delay-500 mx-3 sm:mx-4">
+                        <img src="images/image3.png" alt="Development Icon" class="custom-icon">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Development</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Your designs morph into interactive, scalable digital solutions—built to perform, inspire, and grow with you.
+                        </p>
+                    </div>
+                     <div class="process-card flex-none w-[280px] sm:w-[300px] md:w-[340px] p-6 rounded-xl text-center md:text-left flex flex-col items-center md:items-start animate-scaleUp delay-600 mx-3 sm:mx-4">
+                        <img src="images/image.png" alt="Deploy Icon" class="custom-icon">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Deploy & Iterate</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            We launch your project and monitor its performance, ready to iterate and enhance based on user feedback and evolving needs.
+                        </p>
+                    </div>
+                    <!-- Duplicate Set of Cards for seamless scroll -->
+                    <div class="process-card flex-none w-[280px] sm:w-[300px] md:w-[340px] p-6 rounded-xl text-center md:text-left flex flex-col items-center md:items-start animate-scaleUp delay-300 mx-3 sm:mx-4" aria-hidden="true">
+                        <img src="images/image2.png" alt="" class="custom-icon"> <!-- Alt empty for duplicate -->
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Initiate the Morph</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Start by connecting with us. Share your vision through our contact form or book a call. We're ready to explore your goals and ignite the transformation.
+                        </p>
+                    </div>
+                    <div class="process-card flex-none w-[280px] sm:w-[300px] md:w-[340px] p-6 rounded-xl text-center md:text-left flex flex-col items-center md:items-start animate-scaleUp delay-400 mx-3 sm:mx-4" aria-hidden="true">
+                        <img src="images/image3.png" alt="" class="custom-icon">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Visualize & Design</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Bring us your boldest ideas. We craft futuristic visuals that align perfectly with your brand's device and forward-thinking identity.
+                        </p>
+                    </div>
+                    <div class="process-card flex-none w-[280px] sm:w-[300px] md:w-[340px] p-6 rounded-xl text-center md:text-left flex flex-col items-center md:items-start animate-scaleUp delay-500 mx-3 sm:mx-4" aria-hidden="true">
+                        <img src="images/image.png" alt="" class="custom-icon">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Development</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Your designs morph into interactive, scalable digital solutions—built to perform, inspire, and grow with you.
+                        </p>
+                    </div>
+                     <div class="process-card flex-none w-[280px] sm:w-[300px] md:w-[340px] p-6 rounded-xl text-center md:text-left flex flex-col items-center md:items-start animate-scaleUp delay-600 mx-3 sm:mx-4" aria-hidden="true">
+                        <img src="images/image2.png" alt="" class="custom-icon">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-white">Deploy & Iterate</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            We launch your project and monitor its performance, ready to iterate and enhance based on user feedback and evolving needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="technology-tools" class="relative min-h-screen flex flex-col justify-center items-center py-16 md:py-24 px-4 overflow-hidden">
+        <img src="images/round.png" alt="Abstract decorative purple and blue round swirl"
+             class="absolute left-0 top-0 bottom-0 h-full
+                    w-1/2 sm:w-2/5 md:w-1/3 lg:w-[30%] xl:w-[28%]
+                    object-cover object-left opacity-50 md:opacity-60 
+                    z-0 pointer-events-none select-none animate-fadeInLeft" />
+        
+        <div class="relative z-10 text-center w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto">
+            <div class="mb-10 md:mb-16 animate-fadeInUp">
+                <p class="text-xl md:text-2xl text-gray-300 font-light">Our</p>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] xl:text-[90px] font-bold text-white tracking-tighter leading-none -mt-1 md:-mt-2 text-shadow-lg animate-fadeInUp delay-100">
+                    Technology
+                </h1>
+                <p class="text-2xl sm:text-3xl md:text-4xl text-gray-200 font-medium mt-1 md:mt-2 tracking-tight animate-fadeInUp delay-200">
+                    & Tools
+                </p>
+            </div>
+
+            <!-- Scrolling Tags Container -->
+            <div class="w-full overflow-hidden py-4 space-y-4 md:space-y-6">
+                <!-- Row 1 -->
+                <div class="scrolling-tags-row animate-scroll-left">
+                    <div class="flex space-x-3 sm:space-x-4"> <!-- Inner wrapper for flex items -->
+                        <!-- Original Set 1 -->
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>
+                            <span>WordPress</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" /></svg>
+                            <span>Shopify</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.936a1.5 1.5 0 012.556.445l3.696 7.628a1.5 1.5 0 01-1.278 2.186H3.536a1.5 1.5 0 01-1.278-2.186l3.696-7.628a1.5 1.5 0 012.556-.445zM9.53 6.04a.75.75 0 00-1.06 0l-3.25 3.25a.75.75 0 001.06 1.06L9.53 7.1l3.22 3.25a.75.75 0 101.06-1.06l-3.25-3.25z" clip-rule="evenodd" /></svg>
+                            <span>React</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10c1.99 0 3.843-.58 5.43-1.575A9.937 9.937 0 0012 20c-4.411 0-8-3.589-8-8s3.589-8 8-8c1.99 0 3.843.58 5.43 1.575A9.937 9.937 0 0012 4V2zm4.5 2a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-4.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm0 4.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm4.5 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-4.5 4.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
+                            <span>Figma</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-2-3.5h4v-2h-4v2zm0-3h4v-2h-4v2zm0-3h4V7h-4v2.5z"/></svg>
+                            <span>Webflow</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-3.5-9h2V9.5h3V11h-3v2h3v1.5h-3V16h-2v-6.5z"/></svg>
+                            <span>Adobe CC</span>
+                        </span>
+                        <!-- Duplicate Set 1 (for seamless scroll) -->
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>
+                            <span>WordPress</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" /></svg>
+                            <span>Shopify</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.936a1.5 1.5 0 012.556.445l3.696 7.628a1.5 1.5 0 01-1.278 2.186H3.536a1.5 1.5 0 01-1.278-2.186l3.696-7.628a1.5 1.5 0 012.556-.445zM9.53 6.04a.75.75 0 00-1.06 0l-3.25 3.25a.75.75 0 001.06 1.06L9.53 7.1l3.22 3.25a.75.75 0 101.06-1.06l-3.25-3.25z" clip-rule="evenodd" /></svg>
+                            <span>React</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10c1.99 0 3.843-.58 5.43-1.575A9.937 9.937 0 0012 20c-4.411 0-8-3.589-8-8s3.589-8 8-8c1.99 0 3.843.58 5.43 1.575A9.937 9.937 0 0012 4V2zm4.5 2a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-4.5 3a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm0 4.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm4.5 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-4.5 4.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
+                            <span>Figma</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-2-3.5h4v-2h-4v2zm0-3h4v-2h-4v2zm0-3h4V7h-4v2.5z"/></svg>
+                            <span>Webflow</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-3.5-9h2V9.5h3V11h-3v2h3v1.5h-3V16h-2v-6.5z"/></svg>
+                            <span>Adobe CC</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- Row 2 (scrolling in opposite direction) -->
+                <div class="scrolling-tags-row animate-scroll-right">
+                     <div class="flex space-x-3 sm:space-x-4"> <!-- Inner wrapper for flex items -->
+                        <!-- Original Set 2 -->
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
+                            <span>Next.js</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                            <span>Python (Django)</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 4h-2v2H7v-2H5v2h2v-2h2v2h-2v-2zm0-8H9v2h2V5z"></path></svg>
+                            <span>Node.js</span>
+                        </span>
+                         <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H4zm3 10H5V6h2v6zm4 0H9V6h2v6zm4 0h-2V6h2v6z" clip-rule="evenodd"></path></svg>
+                            <span>SQL/NoSQL</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2C5.03 2 1 6.03 1 11s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zM9 5a1 1 0 011-1h.01a1 1 0 010 2H10a1 1 0 01-1-1zm1 10a1 1 0 01-1 1H7a1 1 0 110-2h3a1 1 0 011 1zm4-4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                            <span>AWS/GCP</span>
+                        </span>
+                        <!-- Duplicate Set 2 -->
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
+                            <span>Next.js</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                            <span>Python (Django)</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9H5v2h2V9zm8 0h-2v2h2V9zm-4 4h-2v2H7v-2H5v2h2v-2h2v2h-2v-2zm0-8H9v2h2V5z"></path></svg>
+                            <span>Node.js</span>
+                        </span>
+                         <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H4zm3 10H5V6h2v6zm4 0H9V6h2v6zm4 0h-2V6h2v6z" clip-rule="evenodd"></path></svg>
+                            <span>SQL/NoSQL</span>
+                        </span>
+                        <span class="tag-gradient text-white text-xs sm:text-sm font-medium py-1.5 px-3 sm:px-4 rounded-3xl inline-flex items-center space-x-1.5 flex-shrink-0">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2C5.03 2 1 6.03 1 11s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zM9 5a1 1 0 011-1h.01a1 1 0 010 2H10a1 1 0 01-1-1zm1 10a1 1 0 01-1 1H7a1 1 0 110-2h3a1 1 0 011 1zm4-4a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                            <span>AWS/GCP</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials-section" class="relative min-h-screen flex flex-col justify-center py-16 md:py-24 px-4 overflow-hidden">
+        <div class="container mx-auto relative z-10">
+            <div class="text-left mb-12 md:mb-16 max-w-xl animate-fadeInUp">
+                <p class="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">What</p>
+                <h2 class="text-6xl sm:text-7xl md:text-8xl lg:text-[100px] xl:text-[110px] font-bold text-white tracking-tighter leading-none -mt-1 md:-mt-2 text-shadow-lg animate-fadeInUp delay-100">
+                    People
+                </h2>
+                <p class="text-xl sm:text-2xl md:text-3xl text-gray-200 font-light mt-0 md:mt-1 ml-12 sm:ml-16 md:ml-20 animate-fadeInUp delay-200">
+                    Say
+                </p>
+            </div>
+
+            <div id="testimonial-cards-container" class="space-y-10 md:space-y-0 md:flex md:flex-col md:gap-10 lg:gap-12 max-w-3xl lg:max-w-4xl mx-auto">
+                <!-- Testimonials will be injected here by JavaScript -->
+            </div>
+
+            <div class="flex justify-end space-x-3 md:space-x-4 mt-10 md:mt-12 max-w-3xl lg:max-w-4xl mx-auto animate-fadeInUp delay-300">
+                <button id="prevTestimonial" class="nav-button-gradient p-3 md:p-3.5 rounded-lg text-white transform hover:scale-110 transition-transform duration-200 shadow-lg" aria-label="Previous Testimonial">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
+                <button id="nextTestimonial" class="nav-button-gradient p-3 md:p-3.5 rounded-lg text-white transform hover:scale-110 transition-transform duration-200 shadow-lg" aria-label="Next Testimonial">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+  <section id="faq" class="relative py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-slate-900 to-purple-900/30 z-0"></div>
+        <img src="images/asset%202.png" alt="Abstract decorative purple swirl accent"
+             class="absolute top-1/4 md:top-1/2 right-0 -translate-y-1/2
+                    w-1/2 sm:w-2/5 md:w-1/3 lg:w-[30%] xl:w-[35%] max-w-md sm:max-w-lg md:max-w-xl
+                    h-auto object-contain opacity-50 md:opacity-60
+                    z-10 pointer-events-none select-none animate-fadeInRight" />
+    
+        <div class="container mx-auto px-4 relative z-20">
+            <div class="text-left mb-10 md:mb-16 max-w-xl animate-fadeInUp">
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-300 font-light">Frequently Asked</p>
+                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none -mt-1 md:-mt-2 text-shadow-lg">
+                    Questions
+                </h2>
+            </div>
+
+            <div class="max-w-xl space-y-3 md:space-y-4" id="faq-container">
+                <div class="faq-item faq-item-open p-4 sm:p-5 animate-fadeInUp delay-100">
+                    <div class="flex justify-between items-start gap-4">
+                        <h3 class="text-base sm:text-lg font-semibold text-white">What services do you offer?</h3>
+                        <button class="faq-arrow-button w-7 h-7 sm:w-8 sm:h-8 rounded-md flex-shrink-0 flex items-center justify-center text-white shadow-md" aria-expanded="true">
+                            <svg class="arrow-icon w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="faq-answer open"> 
+                        <p class="text-xs sm:text-sm text-gray-100 leading-relaxed">
+                            We provide branding, web and UI/UX design, social media content, motion graphics, 2D/3D animation, and custom creative solutions for digital and print.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item faq-item-closed p-3 sm:p-4 animate-fadeInUp delay-200">
+                    <div class="flex justify-between items-center gap-4">
+                        <h3 class="text-sm sm:text-base font-medium text-gray-200">How long does a project typically take?</h3>
+                        <button class="faq-arrow-button w-7 h-7 sm:w-8 sm:h-8 rounded-md flex-shrink-0 flex items-center justify-center text-white shadow-md" aria-expanded="false">
+                            <svg class="arrow-icon w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-xs sm:text-sm text-gray-100 leading-relaxed">
+                            Project timelines vary depending on the scope and complexity. We provide a detailed timeline after the initial consultation and project brief. Simple projects might take a few weeks, while larger ones can span several months.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item faq-item-closed p-3 sm:p-4 animate-fadeInUp delay-300">
+                    <div class="flex justify-between items-center gap-4">
+                        <h3 class="text-sm sm:text-base font-medium text-gray-200">What is your design process?</h3>
+                         <button class="faq-arrow-button w-7 h-7 sm:w-8 sm:h-8 rounded-md flex-shrink-0 flex items-center justify-center text-white shadow-md" aria-expanded="false">
+                            <svg class="arrow-icon w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-xs sm:text-sm text-gray-100 leading-relaxed">
+                            Our process involves discovery (understanding your needs), strategy (planning the approach), design (creating visuals and prototypes), development (building the solution), and iteration (refining based on feedback). We believe in collaborative partnership throughout the project.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item faq-item-closed p-3 sm:p-4 animate-fadeInUp delay-400">
+                    <div class="flex justify-between items-center gap-4">
+                        <h3 class="text-sm sm:text-base font-medium text-gray-200">Do you offer ongoing support?</h3>
+                         <button class="faq-arrow-button w-7 h-7 sm:w-8 sm:h-8 rounded-md flex-shrink-0 flex items-center justify-center text-white shadow-md" aria-expanded="false">
+                            <svg class="arrow-icon w-4 h-4 sm:w-5 sm:h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="faq-answer">
+                        <p class="text-xs sm:text-sm text-gray-100 leading-relaxed">
+                            Yes, we offer various support and maintenance packages to ensure your digital assets continue to perform optimally post-launch. This can include updates, bug fixes, and feature enhancements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="relative py-20 md:py-28 lg:py-32 text-center overflow-hidden cta-background">
+        <div class="container mx-auto px-4 relative z-10 animate-fadeInUp">
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-200 font-light tracking-wide">
+                Enter the Next<span class="text-pink-400 text-2xl sm:text-3xl md:text-4xl relative -top-0.5 mx-1">.</span>
+            </p>
+            <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[100px] font-bold text-white tracking-tighter leading-none -mt-1 md:-mt-2 text-shadow-lg">
+                Dimension
+            </h2>
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-200 font-light mt-1 md:mt-2 tracking-wide">
+                of Design
+            </p>
+            <button class="mt-8 md:mt-10 py-2.5 px-8 sm:py-3 sm:px-10
+                           cta-button-gradient
+                           text-white font-semibold rounded-lg
+                           text-sm sm:text-base md:text-lg
+                           transition-all duration-300 shadow-2xl transform hover:scale-105 hover:brightness-110 animate-scaleUp delay-200">
+                Let's Morph
+            </button>
+        </div>
+    </section>
+
+     <footer class="relative pt-16 pb-8 overflow-hidden">
+        <img src="images/footer.png" alt="Decorative abstract footer swirl"
+             class="absolute bottom-0 right-0
+                    w-1/2 sm:w-2/5 md:w-1/3 lg:w-[30%] xl:w-[35%] max-w-xs sm:max-w-sm md:max-w-md
+                    h-auto object-contain opacity-70 md:opacity-90
+                    z-0 pointer-events-none select-none animate-fadeInRight delay-500" />
+ 
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start"> 
+                <div class="md:col-span-4 lg:col-span-3 mb-8 md:mb-0 animate-fadeInUp delay-100"> 
+                    <a href="#" class="inline-block">
+                        <img src="images/logo.png" alt="Metamorph Solutions Logo" class="h-10 sm:h-12">
+                    </a>
+                     <p class="text-xs text-gray-400 mt-4 leading-relaxed">
+                        Transforming visions into digital reality. Innovative design and development for impactful solutions.
+                    </p>
+                </div>
+
+                <div class="md:col-span-8 lg:col-span-9"> 
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+                        <div class="animate-fadeInUp delay-200">
+                            <h2 class="footer-title">Pages</h2>
+                            <ul class="space-y-2">
+                                <li><a href="#" class="footer-link">Home</a></li>
+                                <li><a href="#services-section" class="footer-link">Services</a></li>
+                                <li><a href="#projects-section" class="footer-link">Portfolio</a></li>
+                                <li><a href="#process" class="footer-link">Our Process</a></li>
+                                <li><a href="#testimonials-section" class="footer-link">Testimonials</a></li>
+                                <li><a href="#faq" class="footer-link">FAQs</a></li>
+                                <li><a href="#cta" class="footer-link">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="animate-fadeInUp delay-300">
+                            <h2 class="footer-title">Services</h2>
+                            <ul class="space-y-2">
+                                <li><a href="#services-section" class="footer-link">Graphic Design</a></li>
+                                <li><a href="#services-section" class="footer-link">UI/UX Design</a></li>
+                                <li><a href="#services-section" class="footer-link">Web & Mobile App</a></li>
+                                <li><a href="#services-section" class="footer-link">Motion Design</a></li>
+                                <li><a href="#services-section" class="footer-link">Digital Marketing</a></li>
+                            </ul>
+                        </div>
+                        <div class="animate-fadeInUp delay-400">
+                            <h3 class="footer-title">Social Media</h3>
+                            <div class="flex space-x-3 mt-1">
+                                <a href="#" class="social-icon-bg w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-gray-300 hover:text-white" aria-label="Telegram">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 2L2 8.667V10h6v12h3.333V10h4L22 2zm-4.667 7.333L8 12.667v-2l9.333-3.334z"/></svg>
+                                </a>
+                                <a href="#" class="social-icon-bg w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-gray-300 hover:text-white" aria-label="Twitter X">
+                                   <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                </a>
+                                <a href="#" class="social-icon-bg w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-gray-300 hover:text-white" aria-label="Instagram">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.212.055 2.065.248 2.77.534.748.303 1.312.738 1.897 1.312.582.585.998 1.146 1.312 1.897.282.704.478 1.558.534 2.77.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.055 1.212-.248 2.065-.534 2.77-.303.748-.738 1.312-1.312 1.897-.585.582-1.146.998-1.897 1.312-.704.282-1.558.478-2.77.534-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.212-.055-2.065-.248-2.77-.534-.748-.303-1.312-.738-1.897-1.312-.582-.585-.998-1.146-1.312-1.897-.282-.704-.478-1.558-.534-2.77-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.055-1.212.248 2.065.534 2.77.303.748.738 1.312 1.312 1.897.585.582 1.146.998 1.897 1.312.704.282 1.558.478 2.77.534 1.266.058 1.646.07 4.85.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.288.059-2.202.263-3.002.572-.855.321-1.595.787-2.323 1.515-.729.728-1.194 1.468-1.515 2.323-.309.8-.513 1.714-.572 3.002-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.059 1.288.263 2.202.572 3.002.321.855.787 1.595 1.515 2.323.728.729 1.468 1.194 2.323 1.515.8.309 1.714.513 3.002.572 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.288-.059 2.202-.263 3.002-.572.855-.321 1.595-.787 2.323-1.515.729-.728 1.194-1.468 1.515-2.323.309-.8.513-1.714-.572-3.002.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.059-1.288-.263-2.202-.572-3.002-.321-.855-.787-1.595-1.515-2.323-.728-.729-1.468-1.194-2.323-1.515-.8-.309-1.714-.513-3.002-.572C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+                                </a>
+                                <a href="#" class="social-icon-bg w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-gray-300 hover:text-white" aria-label="Facebook">
+                                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0H14.44C10.434 0 9 2.695 9 6.103V8z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700/50 mt-12 pt-8 text-center animate-fadeInUp delay-500"> 
+                <p class="text-xs text-gray-500">© <span id="currentYear"></span> Metamorph Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+   <script src="script.js"></script>
+
+
+
+
+
+
+</body>
+</html>
