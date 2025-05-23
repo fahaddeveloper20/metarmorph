@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="text-white antialiased">
-
     <div class="relative min-h-screen overflow-hidden flex flex-col">
-        <!-- Abstract Background Blobs -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
             <div class="absolute -top-1/4 -left-1/4 w-[120vw] h-[120vh] md:w-[80vw] md:h-[150vh] opacity-40 md:opacity-30 transform">
                 <div class="w-full h-full bg-gradient-to-br from-purple-600 via-pink-500 to-purple-700 rounded-[50%_50%_30%_70%_/_40%_60%_40%_60%] animate-pulse-slow blur-3xl"></div>
@@ -20,7 +18,7 @@
             </div>
         </div>
         
-        <script>
+    <script>
             tailwind.config = {
                 theme: { extend: {
                     animation: {
@@ -29,13 +27,15 @@
                     }
                 }}
             }
-        </script>
+    </script>
 
+    <!-- header start -->
     <header class="absolute top-0 left-0 right-0 z-40 p-4 sm:p-6 md:p-8"> 
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold tracking-tight animate-fadeInLeft">
                  <img src="logo.png" alt="Metamorph Solutions Small Logo" class="h-20">
             </a>
+            
             <button id="openNavButton" class="p-2 text-white hover:text-pink-300 transition-colors animate-fadeInRight">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 sm:w-8 sm:h-8">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -43,7 +43,6 @@
             </button>
         </div>
     </header>
-
     <div id="overlayNav" class="fixed inset-0 overlay-nav-bg w-full h-full flex flex-col items-start justify-start p-6 sm:p-8 md:p-12 transform translate-x-full transition-transform duration-300 ease-in-out z-50">
         <div class="w-full flex justify-between items-center mb-12 sm:mb-16 md:mb-20">
            <img src="logo.png" alt="Metamorph Solutions Logo" class="h-10 sm:h-12">
@@ -65,19 +64,17 @@
             </ul>
         </nav>
     </div>
-    
-        <main class="relative z-10 flex-grow flex flex-col items-center justify-center pt-24 pb-40 sm:pt-28 sm:pb-48 px-4 text-center">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%+3rem)] sm:-translate-y-[calc(50%+4rem)] md:-translate-y-[calc(50%+5rem)] 
-                        w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56
-                        border-2 border-yellow-400 rounded-full z-10 opacity-60 animate-scaleUp" style="animation-name: haloPulse; animation-duration: 3s; animation-iteration-count: infinite;">
-            </div>
+    <!-- header end -->
+
+    <!-- hero section  start -->
+    <main class="relative z-10 flex-grow flex flex-col items-center justify-center pt-24 pb-40 sm:pt-28 sm:pb-48 px-4 text-center">
              <img src="Group.png" alt="Classical Statue" 
             
                  class="absolute bottom-0 left-1/2 -translate-x-1/2 
                         w-[60%] max-w-[280px] 
                         sm:w-[55%] sm:max-w-[350px] 
                         md:w-auto md:h-[65vh] md:max-h-[500px] md:max-w-none
-                        lg:h-[70vh] lg:max-h-[600px]
+                        lg:h-[85vh] lg:max-h-[600px]
                         z-20 object-contain pointer-events-none select-none">
             <div class="relative z-30">
                 <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[140px] xl:text-[160px] font-bold tracking-tighter text-white leading-none text-shadow-md animate-fadeInUp">
@@ -90,17 +87,17 @@
                     Solutions
                 </h2>
             </div>
-            <img src="hero.png" alt="Classical Statue" 
+            
+            <!-- <img src="hero.png" alt="Classical Statue" 
             
                  class="absolute bottom-0 left-1/2 -translate-x-1/2 
                         w-[60%] max-w-[280px] 
                         sm:w-[55%] sm:max-w-[350px] 
                         md:w-auto md:h-[65vh] md:max-h-[500px] md:max-w-none
                         lg:h-[70vh] lg:max-h-[600px]
-                        z-20 object-contain pointer-events-none select-none">
-        </main>
-
-        <footer class="relative z-30 w-full p-4 sm:p-6 md:p-8 mt-auto">
+                        z-20 object-contain pointer-events-none select-none"> -->
+    </main>
+    <footer class="relative z-30 w-full p-4 sm:p-6 md:p-8 mt-auto">
             <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
                 <p class="text-xs sm:text-sm text-gray-300 md:w-2/5 lg:w-[45%] xl:w-1/3 text-center md:text-left leading-relaxed animate-fadeInLeft delay-200">
                     We're passionate about turning your vision into stunning designs. Whether you're an individual, startup, or corporation, we bring creativity and precision to elevate your brand.
@@ -115,11 +112,20 @@
                         Have a project!
                     </a>
                 </div>
+                <img src="hero.png" alt="Classical Statue" 
+            
+                 class="absolute bottom-0 left-1/2 -translate-x-1/2 
+                        w-[60%] max-w-[280px] 
+                        sm:w-[55%] sm:max-w-[350px] 
+                        md:w-auto md:h-[65vh] md:max-h-[500px] md:max-w-none
+                        lg:h-[120vh] lg:max-h-[600px]
+                        z-20 object-contain pointer-events-none select-none">
             </div>
-        </footer>
+    </footer>
     </div>
+    <!-- hero section  end -->
 
-
+    <!-- services section  start -->
     <div id="services-section" class="relative overflow-hidden min-h-screen flex flex-col">
         <header class="py-6 md:py-8 relative z-20"> 
             <div class="container mx-auto px-4">
@@ -137,13 +143,14 @@
                         <img src="vol.png" alt="WooCommerce logo" class="h-6 sm:h-8 opacity-70 hover:opacity-100 transition-opacity">
                     </div>
                 </div>
-            </div>
+            </div>     
         </header>
+        
 
         <main class="container mx-auto py-12 md:py-16 lg:py-24 px-4 text-center flex-grow flex flex-col justify-center relative z-10">
             <div class="animate-fadeInUp">
                 <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 tracking-wide">We Provide<span class="text-pink-500 text-3xl md:text-4xl relative -top-1">.</span></p>
-                <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight text-white mt-1 md:mt-2 text-shadow-lg">Services</h1>
+                <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl  tracking-tight text-white mt-1 md:mt-2 text-shadow-lg">Services</h1>
             </div>
 
             <div class="mt-12 md:mt-16 lg:mt-20">
@@ -200,8 +207,9 @@
                     opacity-60 md:opacity-75 pointer-events-none z-0 
                     transform translate-x-[15%] translate-y-[15%] sm:translate-x-[10%] sm:translate-y-[10%] md:translate-x-[5%] md:translate-y-[5%]" />
     </div>
+    <!-- services section  end -->
 
-
+    <!-- project section  start -->
      <section id="projects-section" class="relative min-h-screen flex flex-col justify-center items-center py-16 md:py-24 px-4 overflow-hidden">
         <img src="m-back.png" alt="Abstract background wave accent"
              class="absolute bottom-0 left-1/2 -translate-x-1/2
@@ -217,6 +225,7 @@
                 Projects
             </h1>
         </div>
+        
 
         <div class="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mt-8 md:mt-12 lg:mt-32 xl:mt-48 z-20">
             <div class="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[650px]">
@@ -267,19 +276,23 @@
             </div>
         </div>
     </section>
+    <!-- project section  end -->
 
-
-    
-<section id="process" class="relative py-16 md:py-24 overflow-hidden">
+    <!-- process section  start -->
+    <section id="process" class="relative py-16 md:py-24 overflow-hidden">
         <div class="absolute inset-0 opacity-20 pointer-events-none">
             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-purple-700 rounded-full blur-[150px]"></div>
         </div>
 
         <div class="container mx-auto px-4 relative z-10">
-            <div class="text-center mb-12 md:mb-20 animate-fadeInUp">
-                <p class="text-xl md:text-2xl lg:text-3xl text-gray-400 font-light">Our</p>
-                <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white text-shadow-lg -mt-1 md:-mt-2 animate-fadeInUp delay-100">Process</h2>
-                <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 font-light mt-1 md:mt-2 animate-fadeInUp delay-200">is Everything</p>
+             <div class="text-left mb-12 md:mb-16 max-w-xl animate-fadeInUp">
+                <p class="text-xl sm:text-2xl md:text-3xl text-gray-300 font-light">Our</p>
+                <h2 class="text-6xl sm:text-7xl md:text-8xl lg:text-[100px] xl:text-[110px] font-bold text-white tracking-tighter leading-none -mt-1 md:-mt-2 text-shadow-lg animate-fadeInUp delay-100">
+                    Process
+                </h2>
+                <p class="text-xl sm:text-2xl md:text-3xl text-gray-200 font-light mt-0 md:mt-1 ml-12 sm:ml-16 md:ml-20 animate-fadeInUp delay-200">
+                    is Everything
+                </p>
             </div>
 
             <!-- Outer container to hide overflow and act as viewport -->
@@ -348,8 +361,10 @@
             </div>
         </div>
     </section>
+    <!-- process section  end -->
 
-<section id="technology-tools" class="relative min-h-screen flex flex-col justify-center items-center py-16 md:py-24 px-4 overflow-hidden">
+    <!-- technology section  start -->
+    <section id="technology-tools" class="relative min-h-screen flex flex-col justify-center items-center py-16 md:py-24 px-4 overflow-hidden">
         <img src="round.png" alt="Abstract decorative purple and blue round swirl"
              class="absolute left-0 top-0 bottom-0 h-full
                     w-1/2 sm:w-2/5 md:w-1/3 lg:w-[30%] xl:w-[28%]
@@ -474,7 +489,9 @@
             </div>
         </div>
     </section>
+    <!-- technology section  end -->
 
+    <!-- testimonials section  start -->
     <section id="testimonials-section" class="relative min-h-screen flex flex-col justify-center py-16 md:py-24 px-4 overflow-hidden">
         <div class="container mx-auto relative z-10">
             <div class="text-left mb-12 md:mb-16 max-w-xl animate-fadeInUp">
@@ -490,6 +507,7 @@
             <div id="testimonial-cards-container" class="space-y-10 md:space-y-0 md:flex md:flex-col md:gap-10 lg:gap-12 max-w-3xl lg:max-w-4xl mx-auto">
                 <!-- Testimonials will be injected here by JavaScript -->
             </div>
+            
 
             <div class="flex justify-end space-x-3 md:space-x-4 mt-10 md:mt-12 max-w-3xl lg:max-w-4xl mx-auto animate-fadeInUp delay-300">
                 <button id="prevTestimonial" class="nav-button-gradient p-3 md:p-3.5 rounded-lg text-white transform hover:scale-110 transition-transform duration-200 shadow-lg" aria-label="Previous Testimonial">
@@ -505,10 +523,12 @@
             </div>
         </div>
     </section>
-    
-  <section id="faq" class="relative py-16 md:py-24 overflow-hidden">
+    <!-- testimonials section end -->
+
+    <!-- faq section  start -->
+    <section id="faq" class="relative py-16 md:py-24 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-black via-slate-900 to-purple-900/30 z-0"></div>
-        <img src="asset%202.png" alt="Abstract decorative purple swirl accent"
+        <img src="asset 2.png" alt="Abstract decorative purple swirl accent"
              class="absolute top-1/4 md:top-1/2 right-0 -translate-y-1/2
                     w-1/2 sm:w-2/5 md:w-1/3 lg:w-[30%] xl:w-[35%] max-w-md sm:max-w-lg md:max-w-xl
                     h-auto object-contain opacity-50 md:opacity-60
@@ -586,7 +606,9 @@
             </div>
         </div>
     </section>
+    <!-- faq section  end -->
 
+    <!-- cta section  start -->
     <section id="cta" class="relative py-20 md:py-28 lg:py-32 text-center overflow-hidden cta-background">
         <div class="container mx-auto px-4 relative z-10 animate-fadeInUp">
             <p class="text-lg sm:text-xl md:text-2xl text-gray-200 font-light tracking-wide">
@@ -607,8 +629,10 @@
             </button>
         </div>
     </section>
+    <!-- cta section  end -->
 
-     <footer class="relative pt-16 pb-8 overflow-hidden">
+    <!-- footer section  start -->
+    <footer class="relative pt-16 pb-8 overflow-hidden">
         <img src="footer.png" alt="Decorative abstract footer swirl"
              class="absolute bottom-0 right-0
                     w-1/2 sm:w-2/5 md:w-1/3 lg:w-[30%] xl:w-[35%] max-w-xs sm:max-w-sm md:max-w-md
@@ -676,12 +700,9 @@
             </div>
         </div>
     </footer>
+    <!-- footer section  end -->
 
    <script src="script.js"></script>
-
-
-
-
 
 
 </body>
